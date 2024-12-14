@@ -14,9 +14,9 @@ for /f "delims=. tokens=1,2,3" %%A in ("%ipBase%") do set range=%%A.%%B.%%C.1-25
 
 set logFile=%logDir%\devices_%datetime%.txt
 
-echo Escaneando dispositivos na rede (%range%), isso pode levar alguns minutos...
+echo scanning in: (%range%), this may take a few minutes...
 
 nmap -sS -sV -p 80,443,22,53,21,23,110 -T4 %range% > "%logFile%"
 
-echo Escaneamento concluído. Informações salvas em: "%logFile%"
+echo scanned. data saved in: "%logFile%"
 pause
